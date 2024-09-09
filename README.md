@@ -11,6 +11,8 @@ User story -> Multi-layer design Application -> Database design -> REST API desi
 
 代码顺序：从底层object entity写起
 
+Lesson.java -> LessonRepository.java
+
 在 Spring Tool Suite 4 (STS4) 或 Eclipse 中，您可以通过快捷方式快速生成构造函数（constructor）、getter 和 setter 方法。以下是具体步骤和快捷键：
 
 ### 1. **生成 Constructor、Getter 和 Setter**
