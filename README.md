@@ -9,3 +9,4 @@ User story -> Multi-layer design Application -> Database design -> REST API desi
 
 <img width="781" alt="image" src="https://github.com/user-attachments/assets/8d363a51-35ff-4472-b3f9-3a79024ecb51">
 
+代码顺序：从底层object entity写起
