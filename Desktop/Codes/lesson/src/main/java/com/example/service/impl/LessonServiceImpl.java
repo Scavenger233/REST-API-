@@ -22,7 +22,7 @@ public class LessonServiceImpl implements LessonService {
 	
 	@Override
 	public List<Lesson> getAllLessons(String username) {
-		logger.trace("Enterd getAlllessons method");
+		logger.trace("Entered getAlllessons method");
 		
 		List<Lesson> lessons = lessonRepository.findAll();
 		
