@@ -40,17 +40,17 @@ class LessonControllerTest {
 	
 	private static final ObjectMapper om = new ObjectMapper();
 	
-	Lesson mockLesson = new Lesson(10001, "pocky", "Spring boot introduction");
+	Lesson mockLesson = new Lesson(10001, "pocky", "Spring Boot Introduction");
 	
-	String exampleLessonJson = "{\"id\": 10001, \"username\": \'bytecaptain\", \'description\": \"Spring Boot Introduction\"}";
+	String exampleLessonJson = "{\"id\": 10001, \"username\": \"pocky\", \"description\": \"Spring Boot Introduction\"}";
 	
 	@Test
 	public void getLesson() throws Exception {
 		
-		Mockito.when(lessonService.getLesson("bytecaptain",10001)).thenReturn(mockLesson);
+		Mockito.when(lessonService.getLesson("pocky",10001)).thenReturn(mockLesson);
 		
 		RequestBuilder requestBuilder = MockMvcRequestBuilders.get(
-				"/instructors/bytecaptain/lessons/10001").accept (
+				"/instructors/pocky/lessons/10001").accept (
 				MediaType.APPLICATION_JSON);
 		
 		MvcResult result = mockMvc.perform(requestBuilder).andReturn();
@@ -61,14 +61,12 @@ class LessonControllerTest {
 	@Test
 	public void createLesson() throws Exception {
 		
-		Lesson lesson = new Lesson(10001, "pocky", "Spring boot introduction");
+		Lesson lesson = new Lesson(10001, "pocky", "Spring Boot Introduction");
 		
 		Mockito.when(lessonService.createLesson(Mockito.anyString(), Mockito.any(Lesson.class))).thenReturn(lesson);
 		
-		String lessonString = om.writeValueAsString(lesson);
-		
 		RequestBuilder requestBuilder = MockMvcRequestBuilders
-				.put("/instructors/pocky/lessons/10001").content(lessonString)
+				.post("/instructors/pocky/lessons").content(exampleLessonJson)
 				.contentType(MediaType.APPLICATION_JSON);
 		
 		MvcResult result = mockMvc.perform(requestBuilder).andReturn();
@@ -91,7 +89,7 @@ class LessonControllerTest {
 		String lessonString = om.writeValueAsString(lesson);
 		
 		RequestBuilder requestBuilder = MockMvcRequestBuilders
-				.put("instructors/pocky/lessons.10001")
+				.put("/instructors/pocky/lessons/10001")
 				.contentType(MediaType.APPLICATION_JSON).content(lessonString);
 		
 		MvcResult result = mockMvc.perform(requestBuilder).andReturn();

@@ -22,7 +22,7 @@ public class LessonController {
 	@Autowired
 	private LessonService lessonService;
 	
-	//url后面会加入GetMapping中的后缀链接
+
 	@GetMapping("/instructors/{username}/lessons")
 	public List<Lesson> getAllLessons(@PathVariable String username) {
 		
