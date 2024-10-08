@@ -1,0 +1,16 @@
+-------------------------------------------------------------------------------
+Test set: com.example.controller.LessonControllerTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 1, Errors: 2, Skipped: 0, Time elapsed: 0.389 s <<< FAILURE! - in com.example.controller.LessonControllerTest
+updateLesson  Time elapsed: 0.023 s  <<< ERROR!
+java.lang.IllegalArgumentException: 'url' should start with a path or be a complete HTTP URL: instructors/pocky/lessons.10001
+	at com.example.controller.LessonControllerTest.updateLesson(LessonControllerTest.java:94)
+
+getLesson  Time elapsed: 0.01 s  <<< ERROR!
+org.json.JSONException: Unterminated object at character 43 of {"id": 10001, "username": 'bytecaptain", 'description": "Spring Boot Introduction"}
+	at com.example.controller.LessonControllerTest.getLesson(LessonControllerTest.java:58)
+
+createLesson  Time elapsed: 0.007 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <201> but was: <200>
+	at com.example.controller.LessonControllerTest.createLesson(LessonControllerTest.java:78)
+

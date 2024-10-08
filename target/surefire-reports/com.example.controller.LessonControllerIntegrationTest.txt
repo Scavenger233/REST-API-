@@ -1,0 +1,20 @@
+-------------------------------------------------------------------------------
+Test set: com.example.controller.LessonControllerIntegrationTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 2, Errors: 2, Skipped: 0, Time elapsed: 4.934 s <<< FAILURE! - in com.example.controller.LessonControllerIntegrationTest
+addLesson  Time elapsed: 0.344 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "java.util.List.get(int)" because the return value of "org.springframework.http.HttpHeaders.get(Object)" is null
+	at com.example.controller.LessonControllerIntegrationTest.addLesson(LessonControllerIntegrationTest.java:58)
+
+updateLessons  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: The port must be an integer: 50895api
+	at com.example.controller.LessonControllerIntegrationTest.updateLessons(LessonControllerIntegrationTest.java:71)
+
+testGetLesson  Time elapsed: 0.084 s  <<< FAILURE!
+java.lang.AssertionError: Actual string is null.
+	at com.example.controller.LessonControllerIntegrationTest.testGetLesson(LessonControllerIntegrationTest.java:93)
+
+testDeleteLesson  Time elapsed: 0.121 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <204> but was: <401>
+	at com.example.controller.LessonControllerIntegrationTest.testDeleteLesson(LessonControllerIntegrationTest.java:109)
+

@@ -4,7 +4,9 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 
 public class BaseIntegrationTest {
+	
 
+	//Encoded password and user name
 	public static String basicToken = "Basic Ynl0ZWNhcHRhaW46YnlOZWNhcHRhaW4=";
 	
 	public HttpHeaders getHttpHeader() {
